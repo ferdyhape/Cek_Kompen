@@ -1,17 +1,21 @@
 <?php
 
-$nim = $_POST["nim"];
+use PHPCrypter\Encryption\Encryption;
 
-$dataUser = array(
+$nim = $_POST["nim"];
+require 'vendor/autoload.php';
+$pw = "bzPRFhrpKj/5Glzr/V5Rj7uCLIrJdVexOi1j04mHiUGzQWEt7Sy2sPK2FExZ+XneGfmI11hx/+2XiKQAi39z8w==";
+
+$data = array(
     "username" => "2031710028",
-    "password" => "sudoku3108"
+    "password" => Encryption::decrypt($pw)
 );
 
 $ch = curl_init();
 CURL_SETOPT($ch, CURLOPT_URL, "http://kompen.jti.polinema.ac.id/login/login_mahasiswa");
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $dataUser);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 curl_setopt($ch, CURLOPT_COOKIEJAR, 'cookie.txt');
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
