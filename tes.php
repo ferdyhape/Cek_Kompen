@@ -1,20 +1,33 @@
 <?php
 
-use PHPCrypter\Encryption\Encryption;
-//You can define your key any where you want
+$curl = curl_init('http://testing-ground.scraping.pro/blocks');
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, TRUE);
+$page = curl_exec($curl);
+if (curl_errno($curl)) // check for execution errors
+{
+    echo 'Scraper error: ' . curl_error($curl);
+    exit;
+}
+curl_close($curl);
 
-//define("ENC_TOKEN_PATH", "your/dir/example");
+$DOM = new DOMDocument;
 
-require 'vendor/autoload.php';
-// Encrypt the text "The only limit of a developer is his imagination"
-$encrypt = Encryption::encrypt("sudoku3108");
+libxml_use_internal_errors(true);
 
-//You store the encrypted data in a file or in a database, or any where you can reuse it
-//After you want to use it again on your site
-//Get your text: $encrypt and then decrypt it
-$decrypt = Encryption::decrypt($encrypt);
+if (!$DOM->loadHTML($page)) {
+    $errors = "";
+    foreach (libxml_get_errors() as $error) {
+        $errors .= $error->message . "<br/>";
+    }
+    libxml_clear_errors();
+    print "libxml errors:<br>$errors";
+    return;
+}
+$xpath = new DOMXPath($DOM);
 
-echo $encrypt . "<br>";
-echo $decrypt;
-
-//All right !
+$case1 = $xpath->query('//*[@id="case1"]')->item(0);
+$query = 'div[not (@class="ads")]/span[1]';
+$entries = $xpath->query($query, $case1);
+foreach ($entries as $entry) {
+    echo " {$entry->firstChild->nodeValue} <br /> ";
+}
