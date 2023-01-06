@@ -4,7 +4,7 @@ session_start();
 $nim = $_POST["nim"];
 $data = array(
     "username" => "2031710028",
-    "password" => "xxxxxxxxxx"
+    "password" => "sudoku3108"
 );
 
 $ch = curl_init();
