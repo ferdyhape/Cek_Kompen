@@ -67,7 +67,7 @@ $nodes = $selector->query("//*[contains(@class, '$classname')]");
                 </div>
                 <div class="card-body">
                     <?php
-                    for ($i = 27; $i <= 30; $i++) {
+                    for ($i = 28; $i <= 30; $i++) {
                         echo '<p class="card-text">' . str_replace('Detail', '', $nodes[$i]->nodeValue) . '</p>';
                     };
                     ?>
