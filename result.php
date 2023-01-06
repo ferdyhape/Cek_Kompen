@@ -17,6 +17,7 @@ $nodes = $selector->query("//*[contains(@class, '$classname')]");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/icon/result.png" />
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -73,7 +74,7 @@ $nodes = $selector->query("//*[contains(@class, '$classname')]");
                 </div>
             </div>
             <div class="bg-light my-3 py-3 rounded" style="width: 100%;">
-                <h6 class="mb-3 text-center">Connect to me!</h6>
+                <h6 class="mb-3 text-center">Connect with me!</h6>
                 <div class="d-flex justify-content-center">
                     <a href="https://github.com/ferdyhape" class="my-auto icon-connect-me" target="_blank"><i class="fa-brands fa-github" style="font-size: 30px;"></i></a>
                     <a href="https://www.linkedin.com/in/ferdy-hahan-pradana/" class="my-auto icon-connect-me" target="_blank"><i class="fa-brands fa-linkedin" style="font-size: 30px;"></i></a>
