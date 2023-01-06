@@ -16,28 +16,43 @@
 
 <body>
     <div class="container my-5 d-flex justify-content-center">
-        <div class="col-xs-8 col-sm-4 mt-5">
-            <div class="card shadow-sm border-0">
+        <div class="col-xs-8 col-sm-4">
+            <div class="card shadow-sm my-3">
                 <div class="card-header text-muted d-flex justify-content-between">
                     <p class="my-auto">created by <cite title="Source Title">ferdyhape</cite></p>
                     <a href="https://github.com/ferdyhape" class="my-auto text-dark" target="_blank"><i class="fa-brands fa-github" style="font-size: 30px;"></i></a>
                 </div>
-                <div class="card-body p-4">
-                    <form action="curl_login.php" target="_blank" class="my-auto" method="post">
-                        <div class="form-outline mb-3">
-                            <label class="form-label" for="nim">Masukkan NIM</label>
-                            <input type="text" id="nim" name="nim" class="form-control" />
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-block">Cek Kompen</button>
-                    </form>
+                <div class="fill p-3">
+                    <div class="card-body p-4">
+                        <figure class="mb-3">
+                            <blockquote class="blockquote">
+                                <p class="pb-2">
+                                    <i class="fas fa-quote-left fa-xs text-primary"></i>
+                                    <span class="lead font-italic">Sebaik-baiknya investasi, adalah investasi ilmu</span>
+                                    <i class="fas fa-quote-right fa-xs text-primary"></i>
+                                </p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                                Pak Farid Angga (Programmer, Dosen JTI)
+                            </figcaption>
+                        </figure>
+                        <form action="curl_login.php" target="_blank" class="my-auto" method="post">
+                            <div class="form-outline mb-3">
+                                <input type="text" id="nim" name="nim" class="form-control" placeholder="Masukkan NIM" />
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Cek Kompen</button>
+                        </form>
+                    </div>
                 </div>
-
             </div>
-
         </div>
     </div>
 
     <style>
+        .card {
+            border-radius: 10px;
+        }
+
         body {
             background: rgb(46, 49, 146);
             background: linear-gradient(90deg, rgba(46, 49, 146, 1) 0%, rgba(27, 255, 255, 1) 100%);
